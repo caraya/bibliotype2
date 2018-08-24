@@ -1,14 +1,14 @@
 {
-  "name": "bibliotype",
+  "name": "bibliotype-2",
   "version": "1.0.0",
-  "description": "-----------------------------------------------------------------------------",
+  "description": "Experiments in long form web content. Expanded from Craig Mod's 2011 bibliotype project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caraya/bibliotype2.git"
+    "url": "https://github.com/caraya/bibliotype2.git"
   },
   "keywords": [],
   "author": "",
@@ -46,13 +46,16 @@
     "gulp-size": "^3.0.0",
     "gulp-snyk": "^0.1.1",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^5.0.0-alpha.3",
     "gulp-wrap": "^0.14.0",
     "postcss": "^7.0.2",
     "remarkable": "^1.7.1",
     "sassdoc": "^2.5.0",
     "scss-lint": "0.0.0",
     "snyk": "^1.91.0",
+    "typescript": "^3.0.1",
     "uncss": "^0.16.2",
     "utility-opentype": "^0.1.4"
-  }
+  },
+  "dependencies": {}
 }

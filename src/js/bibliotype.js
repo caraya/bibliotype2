@@ -1,261 +1,89 @@
-/*  ---------------------------------------------------
+/*
+TODO: Create function that checks if k/v pair exists in local storage
+TODO: Check for localstorage value and set it if not present
+TODO: Implement Toggle for menuButton
+TODO: define width and font size for reading experiences
+TODO: Use defined values in event listeners for size
+*/
+/**
+ * @name setRootVar
+ *
+ * @param {String} name
+ * @param {any} value
+ */
+function setRootVar(name, value) {
+  let rootStyles = document.styleSheets[0].cssRules[3].style;
+  rootStyles.setProperty('--' + name, value);
+};
 
-    ===========================================
-                B I B L I O T Y P E
-                         *
-           BASE BOOK / LONGFORM TYPOGRAPHY
-               FOR TABLET COMPUTERS
-    = = = = = = = = = = = = = = = = = = = = = = 
-    
-    There is nothing -- seriously, nothing (no really, nothing) -- fancy 
-    going on in here, but just to make people feel comfortable. Here's a 
-    license saying, effectively, hack away. 
-    
-    - - - - 
-    
-    Copyright (C) 2011 by Craig Mod (http://craigmod.com)
+// /**
+//  * @name checkLS
+//  *
+//  * @param {string} value to check for
+//  * @return {boolean}
+//  */
+// function checkLS(value) {
+//   return localStorage.getItem(value);
+// }
 
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
+  document.addEventListener('DOMContentLoaded', function(e) {
+    // Show or hide the menu.  Right Now it only shows
+    const menuButton = document.getElementById('menuButton');
+      menuButton.addEventListener('click', function(e) {
+      setRootVar('menu-visibility', 'show');
+    }, false);
 
-    --------------------------------------------------- */
+    // Set the font to Roboto
+    const roboto = document.getElementById('roboto');
+    roboto.addEventListener('click', function(e) {
+      setRootVar('body-font', 'roboto');
+      setRootVar('body-backup', 'Open Sans');
+      setRootVar('body-default', 'sans-serif');
+    });
 
+    // Set the font to Source Serif
+    const source = document.getElementById('source');
+    source.addEventListener('click', function(e) {
+      setRootVar('body-font', 'Source Serif');
+      setRootVar('body-backup', 'Georgia');
+      setRootVar('body-default', 'serif');
+    });
 
-    $(document).ready(function() {
+    // Justify text
+    const justify = document.getElementById('justify');
+    justify.addEventListener('click', function(e) {
+      setRootVar('content-justify', 'justify');
+    });
 
-      // --------------------------------------
-      // Setup hyphenator
-      //      
-      Hyphenator.config({
-              displaytogglebox : true,
-              classname: 'body_text',
-              minwordlength : 4,
-              togglebox : function () {
-                        var myelem = document.getElementById('hyphenToggle');
-                        if (Hyphenator.doHyphenation) {
-                          myelem.setAttribute("class", "highlight");
-                          myelem.onclick = Hyphenator.toggleHyphenation;
-                        } else {
-                          myelem.setAttribute("class", "");
-                          myelem.onclick = Hyphenator.toggleHyphenation;
-                        }
-                }
-      });
-      Hyphenator.run();
-      
-      //alert(hyphenate);
+    // Align text to the left, creating ragged right margin
+    const ragged = document.getElementById('ragged');
+    ragged.addEventListener('click', function(e) {
+      setRootVar('content-justify', 'left');
+    });
 
-      // ---------------------------------------
-      // Turn on and off menu item indicator
-      //
-      function menuSet() 
-      {
-        $('menu li').removeClass('highlight');
+    // Hyphenate
+    const hyphenate = document.getElementById('hyphenate');
+    hyphenate.addEventListener('click', function(e) {
+      setRootVar('content-hyphenate', 'auto');
+    });
 
-        var classList1 = $('body').attr('class').split(/\s+/);
-        var classList2 = $('#content_container').attr('class').split(/\s+/);
-        
-        classList = classList1.concat(classList2);
-        
-        var grid_on = false;
-        //alert(classList);
-        $.each(classList, function(index, item){
-          //alert(item);
-          if (item==='bed') {
-             $('li.size1').addClass('highlight');
-          }
-          else if (item==='knee') {
-             $('li.size2').addClass('highlight');
-          }
-          else if (item==='breakfast') {
-             $('li.size3').addClass('highlight');
-          }
-          else if (item==='bg_grid') {
-             grid_on = true;
-             $('li.bg_on').addClass('highlight');
-          }
-          else if (item==='low') {
-             $('li.lowc').addClass('highlight');
-          }
-          else if (item==='high') {
-             $('li.highc').addClass('highlight');
-          }
-          else if (item==='ragged') {
-             $('li.rag').addClass('highlight');
-          }
-          else if (item==='justified') {
-             $('li.just').addClass('highlight');
-          }
-          else if (item==='helvetica') {
-             $('li.hel').addClass('highlight');
-          }
-          else if (item==='georgia') {
-             $('li.geo').addClass('highlight');
-          }
-        });
-        
-        if(!grid_on)
-        {
-          $('li.bg_off').addClass('highlight');
-        }
-      
-      }
-      
-      menuSet();
-      
-      
-      // --------------------------------------
-      // Swipe Right to reload the page 
-      // (great for quick debugging)
-      //
-      
-      /*
-      $('body').addSwipeEvents().
-        bind('swiperight', function(evt, touch) {
-          window.location.reload();
-      });
-      */
+    // Manual Hyphens are how I'm turning them off
+    const manual = document.getElementById('manual');
+    manual.addEventListener('click', function() {
+      setRootVar('content-hyphenate', 'manual');
+    });
 
-      // --------------------------------------
-      // Swipe Left to toggle grid
-      //
-      // Great for debugging but otherwise confusing
-      //
-      /*
-      $('body').addSwipeEvents().
-        bind('swipeleft', function(evt, touch) {
-        if($('body').hasClass('bg_grid'))
-        {
-          $('body').removeClass('bg_grid');
-        }
-        else
-        {
-          $('body').addClass('bg_grid');
-        }
-        menuSet();
-      });
-      */
+    // High contrast color set.
+    // When we change, we change both background and color text
+    const light = document.getElementById('light');
+    light.addEventListener('click', function(e) {
+      setRootVar('background-color', 'rgba(255, 255, 255, 1)');
+      setRootVar('text-color', 'rgba(0, 0, 0, 1)');
+    });
 
-
-
-      // --------------------------------------
-      // Doubletap to show / hide menu
-      //
-      $('body').addSwipeEvents().
-        bind('doubletap', function(evt, touch) {
-          $('menu').slideToggle('fast', function() {
-            // Animation complete.
-          });
-      });
-
-
-      // --------------------------------------
-      // Doubleclick to show menu on desktop
-      //
-      /*
-      $(document).bind('dblclick', function(){
-        $('menu').slideToggle('fast', function() {
-            // Animation complete.
-          });
-      });*/
-      
-      // Added menu tab instead of double click:
-      //  - Discoverable & 
-      //  - Cleaner
-      $('#menu_tab').click(function() {
-        $('menu').slideToggle('fast', function() {
-            // Animation complete.
-          });
-      });
-
-
-
-      // -------------------------------------
-      // Size toggles
-      //
-      $('.size1').click(function() {
-        $('#content_container').attr("class", "bed");
-        menuSet();
-      });
-
-      $('.size2').click(function() {
-        $('#content_container').attr("class", "knee");
-        menuSet();
-      });
-
-      $('.size3').click(function() {
-        $('#content_container').attr("class", "breakfast");
-        menuSet();
-      });
-      
-      
-      // -------------------------------------
-      // Contrast Toggles
-      //
-      $('.highc').click(function() {
-        $('body').removeClass('low high').addClass('high');
-        menuSet();
-      });
-
-      $('.lowc').click(function() {
-        $('body').removeClass('low high').addClass('low');
-        menuSet();
-      });
-
-
-      // -------------------------------------
-      // Justification Toggles
-      //
-      $('.just').click(function() {
-        $('body').removeClass('ragged justified').addClass('justified');
-        menuSet();
-      });
-
-      $('.rag').click(function() {
-        $('body').removeClass('ragged justified').addClass('ragged');
-        menuSet();
-      });
-
-
-      // -------------------------------------
-      // Serif toggle
-      //
-      $('.hel').click(function() {
-        $('body').removeClass('georgia helvetica').addClass('helvetica');
-        menuSet();
-      });
-
-      $('.geo').click(function() {
-        $('body').removeClass('helvetica georgia').addClass('georgia');
-        menuSet();
-      });
-
-      // -------------------------------------
-      // Grid toggle
-      //
-      $('.bg_on').click(function() {
-        $('body').removeClass('bg_grid').addClass('bg_grid');
-        menuSet();
-      });
-
-      $('.bg_off').click(function() {
-        $('body').removeClass('bg_grid');
-        menuSet();
-      });
-
-    })
+    const dark = document.getElementById('dark');
+    dark.addEventListener('click', function(e) {
+      setRootVar('background-color', 'rgba(0, 0, 0, 1)');
+      setRootVar('text-color', 'rgba(255, 255, 255, 1)');
+    });
+ });
