@@ -37,9 +37,8 @@
   --body-font: "Roboto";
   --body-backup: "Open Sans";
   --body-default: sans-serif;
-  --font-size: 100%;
   --line-height: 1.25;
-  --body-font-size: 1rem;
+  --body-font-size: 1.25;
   --font-weight: "wght" 400;
   --font-width: "wdth" 100;
   --font-italics: "slnt" 0;
@@ -52,7 +51,9 @@
 }
 
 body {
-  font-size: 1rem;
+  background-color: white;
+  color: black;
+  font-size: 1;
   line-height: 1.25;
   font-family: Roboto, "Open Sans", sans-serif;
   text-align: left;
@@ -62,7 +63,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font), var(--body-backup), var(--body-default);
-  font-size: var(--font-size);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: var(--content-justify);
   -webkit-hyphens: var(--content-hyphenate);
@@ -85,10 +86,12 @@ b, strong {
 .content {
   margin: 0 auto;
   width: var(--body-width);
+  font-size: calc(var(--body-font-size) * 1rem);
 }
 
 p {
   text-indent: 3em;
+  transition: all linear 0.2s;
 }
 p:first-of-type {
   text-indent: 0;
@@ -97,7 +100,6 @@ p:first-of-type {
 .separator {
   text-align: center;
   text-indent: 0;
-  font-size: calc(var(--body-font-size) * 2rem);
 }
 
 .desc {
@@ -115,7 +117,7 @@ p:first-of-type {
 }
 
 #menu {
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
   padding: 1em;
   width: 15vw;
   z-index: 20;

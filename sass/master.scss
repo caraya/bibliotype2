@@ -48,9 +48,8 @@
   --body-backup: "Open Sans";
   --body-default: sans-serif;
   // Font and line-height related
-  --font-size: 100%;
   --line-height: 1.25;
-  --body-font-size: 1rem;
+  --body-font-size: 1.25;
   // Font styling
   --font-weight: "wght" 400;
   --font-width: "wdth" 100;
@@ -69,17 +68,20 @@
   }
 
 body {
-  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  font-size: 1;
   line-height: 1.25;
   font-family: Roboto, 'Open Sans', sans-serif;
   text-align: left;
   -webkit-hyphens: manual;
   -ms-hyphens: manual;
   hyphens: manual;
+  // transition: all linear 0.2s;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font), var(--body-backup), var(--body-default);
-  font-size: var(--font-size);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: var(--content-justify);
   -webkit-hyphens: var(--content-hyphenate);
@@ -103,10 +105,12 @@ b, strong {
 .content {
   margin: 0 auto;
   width: var(--body-width);
+  font-size: calc(var(--body-font-size) * 1rem);
 }
 
 p {
   text-indent: 3em;
+  transition: all linear 0.2s;
 
   &:first-of-type {
     text-indent: 0;
@@ -115,7 +119,6 @@ p {
 .separator {
   text-align: center;
   text-indent: 0;
-  font-size: calc(var(--body-font-size) * 2rem);
 }
 
 .desc {
@@ -133,7 +136,7 @@ p {
 }
 
 #menu {
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
   padding: 1em;
   width: 15vw;
   z-index: 20;
@@ -147,12 +150,6 @@ p {
   }
 
 }
-
-
-
-
-
-
 
 /* If class is applied, update custom property and
    apply modern font-variant-* when supported */

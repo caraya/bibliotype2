@@ -86,4 +86,49 @@ function setRootVar(name, value) {
       setRootVar('background-color', 'rgba(0, 0, 0, 1)');
       setRootVar('text-color', 'rgba(255, 255, 255, 1)');
     });
+
+    const bed = document.getElementById('bed');
+    bed.addEventListener('click', function() {
+      setRootVar('body-width', '60rem');
+      setRootVar('menu-visibility', 'hidden');
+    });
+    const knee = document.getElementById('knee');
+    knee.addEventListener('click', function() {
+      setRootVar('body-width', '50rem');
+      setRootVar('menu-visibility', 'hidden');
+    });
+    const breakfast = document.getElementById('breakfast');
+    breakfast.addEventListener('click', function() {
+      setRootVar('body-width', '40rem');
+      setRootVar('menu-visibility', 'hidden');
+    });
+
+    // Set default value
+    // Compare the current value with the default
+    // Adjust as needed
+    const larger = document.getElementById('larger');
+    const smaller = document.getElementById('smaller');
+    const defaultSize = document.getElementById('defaultSize');
+
+
+    larger.addEventListener('click', function(e) {
+    const style = window.getComputedStyle(document.documentElement);
+    const fontSize = style.getPropertyValue('--body-font-size');
+    const calcFont = parseFloat(fontSize);
+    // console.log(fontSize);
+    // console.log(calcFont);
+      setRootVar('body-font-size', calcFont + 0.25);
+    // console.log(fontSize);
+    });
+
+    smaller.addEventListener('click', function(e) {
+    const style = window.getComputedStyle(document.documentElement);
+    const fontSize = style.getPropertyValue('--body-font-size');
+    const calcFont = parseFloat(fontSize);
+      setRootVar('body-font-size', calcFont - 0.1);
+    });
+
+    defaultSize.addEventListener('click', function(e) {
+      setRootVar('body-font-size', 1.25);
+    });
  });
