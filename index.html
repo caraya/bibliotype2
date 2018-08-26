@@ -1,88 +1,98 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang='en-us' dir='ltr'>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
   <title>Monsters of Mars</title>
-  <link rel="stylesheet" href="css/master.css">
-  <script defer src="js/bibliotype.js"></script>
-  <script type="application/ld+json">{
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://caraya.github.io/bibliotype2/"
+  <link rel='stylesheet' href='css/master.css'>
+  <link rel='manifest' href='manifest.json'>
+  <script defer src='js/bibliotype.js'></script>
+  <script>
+    // Check that service workers are available
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
+  <script type='application/ld+json'>{
+    '@context': 'http://schema.org',
+    '@type': 'Article',
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': 'https://caraya.github.io/bibliotype2/'
     },
-    "headline": "Monsters of Mars",
-    "alternativeHeadline": "TA Complete Novelette robots and stuff",
-    "image": "https://www.gutenberg.org/files/30452/30452-h/images/image_003.jpg",
-    "author": {
-      "@type": "Person,"
-      "name": "Edmond Hamilton"
+    'headline': 'Monsters of Mars',
+    'alternativeHeadline': 'TA Complete Novelette robots and stuff',
+    'image': 'https://www.gutenberg.org/files/30452/30452-h/images/image_003.jpg',
+    'author': {
+      '@type': 'Person,'
+      'name': 'Edmond Hamilton'
     },
-    "editor": {
-      "@type": "Person,"
-      "name": "John Campbell"
+    'editor': {
+      '@type': 'Person,'
+      'name': 'John Campbell'
     },
-    "genre": "science Fiction",
-    "keywords": "scifi astounding campbell",
-    "wordcount": "13155",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Readers Guild, Inc",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Project_Gutemberg_logo.svg/2000px-Project_Gutemberg_logo.svg.png"
+    'genre': 'science Fiction',
+    'keywords': 'scifi astounding campbell',
+    'wordcount': '13155',
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Readers Guild, Inc',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Project_Gutemberg_logo.svg/2000px-Project_Gutemberg_logo.svg.png'
       }
     },
-    "url": "http://www.example.com",
-    "datePublished": "1931-04-01",
-    "dateCreated": "2018-08-25",
-    "dateModified": "2018-08-25",
-    "description": "Story from the April 1931 issue of Astounding Stories"
+    'url': 'http://www.example.com',
+    'datePublished': '1931-04-01',
+    'dateCreated': '2018-08-25',
+    'dateModified': '2018-08-25',
+    'description': 'Story from the April 1931 issue of Astounding Stories'
   }
   </script>
 </head>
 
 <body>
-  <button id="menuButton">Menu</button>
-  <div id="menu">
+  <button id='menuButton'>Menu</button>
+  <div id='menu'>
     <h1>Menu</h1>
 
-    <p class="desc">Size</p>
-    <button id="bed">bed</button>
-    <button id="knee">knee</button>
-    <button id="breakfast">breakfast</button>
+    <p class='desc'>Size</p>
+    <button id='bed'>bed</button>
+    <button id='knee'>knee</button>
+    <button id='breakfast'>breakfast</button>
 
-    <p class="desc">Font Size</p>
-    <button id="larger">Larger</button>
-    <button id="smaller">Smaller</button>
-    <button id="defaultSize">Default</button>
+    <p class='desc'>Font Size</p>
+    <button id='larger'>Larger</button>
+    <button id='smaller'>Smaller</button>
+    <button id='defaultSize'>Default</button>
 
-    <p class="desc">Justification</p>
-    <button id="ragged">Ragged</button>
-    <button id="justify">Justified</button>
+    <p class='desc'>Justification</p>
+    <button id='ragged'>Ragged</button>
+    <button id='justify'>Justified</button>
 
-    <p class="desc">Hyphenation</p>
-    <button id="hyphenate">Auto</button>
-    <button id="manual">Manual</button>
+    <p class='desc'>Hyphenation</p>
+    <button id='hyphenate'>Auto</button>
+    <button id='manual'>Manual</button>
 
-    <p class="desc">Font Family</p>
-    <button id="roboto">Roboto</button>
-    <button id="source">Source Serif</button>
+    <p class='desc'>Font Family</p>
+    <button id='roboto'>Roboto</button>
+    <button id='source'>Source Serif</button>
 
-    <p class="desc">UI Color</p>
-    <button id="light">Light</button>
-    <button id="dark">Dark</button>
+    <p class='desc'>UI Color</p>
+    <button id='light'>Light</button>
+    <button id='dark'>Dark</button>
 
   </div>
 
 
-  <div class="content">
+  <div class='content'>
 
-    <div class="centered">
+    <div class='centered'>
       <h1>Monsters of Mars</h1>
 
       <h2>A Complete Novelette</h2>
@@ -92,7 +102,7 @@
       </h3>
     </div>
 
-    <p>Allan Randall stared at the man before him. "And that's why you sent for me, Milton?" he finally asked.</p>
+    <p>Allan Randall stared at the man before him. 'And that's why you sent for me, Milton?' he finally asked.</p>
 
 
     <p>There was a moment's silence, in which Randall's eyes moved as though uncomprehendingly from the face of Milton to those
@@ -100,23 +110,23 @@
       in that momentary silence there came in to them from the outside night the distant pounding of the Atlantic upon the
       beach. It was Randall who first spoke again.</p>
 
-    <p>The other's face was unsmiling. "That's why I sent for you, Allan," he said quietly. "To go to Mars with us to-night!"</p>
+    <p>The other's face was unsmiling. 'That's why I sent for you, Allan,' he said quietly. 'To go to Mars with us to-night!'</p>
 
-    <p>"To Mars!" he repeated. "Have you gone crazy, Milton&mdash;or is this some joke you've put up with Lanier and Nelson
-      here?"
+    <p>'To Mars!' he repeated. 'Have you gone crazy, Milton&mdash;or is this some joke you've put up with Lanier and Nelson
+      here?'
     </p>
 
-    <p>Milton shook his head gravely. "It is not a joke, Allan. Lanier and I are actually going to flash out over the gulf to
+    <p>Milton shook his head gravely. 'It is not a joke, Allan. Lanier and I are actually going to flash out over the gulf to
       the planet Mars to-night. Nelson must stay here, and since we wanted three to go I wired you as the most likely of
-      my friends to make the venture."</p>
+      my friends to make the venture.'</p>
 
-    <p>"But good God!" Randall exploded, rising. "You, Milton, as a physicist ought to know better. Space-ships and projectiles
-      and all that are but fictionists' dreams."</p>
+    <p>'But good God!' Randall exploded, rising. 'You, Milton, as a physicist ought to know better. Space-ships and projectiles
+      and all that are but fictionists' dreams.'</p>
 
-    <p>"We are not going in either space-ship or projectile," said Milton calmly. And then as he saw his friend's bewilderment
+    <p>'We are not going in either space-ship or projectile,' said Milton calmly. And then as he saw his friend's bewilderment
       he rose and led the way to a door at the room's end, the other three following him into the room beyond.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -134,38 +144,38 @@
       was that of Nelson. Randall simply stared at the thing, until Milton nodded toward it.
     </p>
 
-    <p>"That," he said, "is what will flash us out to Mars to-night."</p>
+    <p>'That,' he said, 'is what will flash us out to Mars to-night.'</p>
 
-    <p>Randall could only turn his stare upon the other, and Lanier chuckled. "Can't take it in yet, Randall? Well, neither
-      could I when the idea was first sprung on us."</p>
+    <p>Randall could only turn his stare upon the other, and Lanier chuckled. 'Can't take it in yet, Randall? Well, neither
+      could I when the idea was first sprung on us.'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
     <p>Milton nodded to seats behind them, and as the half-dazed Randall sank into one the physicist faced him earnestly.</p>
 
-    <p>"Randall, there isn't much time now, but I am going to tell you what I have been doing in the last two years on this
+    <p>'Randall, there isn't much time now, but I am going to tell you what I have been doing in the last two years on this
       God-forsaken Maine coast. I have been for those two years in unbroken communication by radio with beings on the planet
       Mars!
     </p>
 
-    <p>"It was when I still held my physics professorship back at the university that I got first onto the track of the thing.
+    <p>'It was when I still held my physics professorship back at the university that I got first onto the track of the thing.
       I was studying the variation of static vibrations, and in so doing caught steady signals&mdash;not static&mdash;at
       an unprecedentedly high wave-length. They were dots and dashes of varying length in an entirely unintelligible code,
       the same arrangement of them being sent out apparently every few hours.</p>
 
-    <p>"I began to study them and soon ascertained that they could be sent out by no station on earth. The signals seemed to
+    <p>'I began to study them and soon ascertained that they could be sent out by no station on earth. The signals seemed to
       be growing louder each day, and it suddenly occurred to me that Mars was approaching opposition with earth! I was startled,
       and kept careful watch. On the day that Mars was closest the earth the signals were loudest. Thereafter, as the red
       planet receded, they grew weaker. The signals were from some being or beings on Mars!</p>
 
-    <p>"At first I was going to give the news to the world, but saw in time that I could not. There was not sufficient proof,
+    <p>'At first I was going to give the news to the world, but saw in time that I could not. There was not sufficient proof,
       and a premature statement would only wreck my own scientific reputation. So I decided to study the signals farther
       until I had irrefutable proof, and to answer them if possible. I came up here and had this place built, and the aerial
       towers and other equipment I wanted set up. Lanier and Nelson came with me from the university, and we began our work.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -174,44 +184,44 @@
       the power of our great windmill-dynamo hook-ups, but for long could not make it. Every few hours like clockwork the
       Martian signals came through. Then at last we heard them repeating one of our own signals. We had been heard!</p>
 
-    <p>"For a time we hardly left our instruments. We began the slow and almost impossible work of establishing intelligent
+    <p>'For a time we hardly left our instruments. We began the slow and almost impossible work of establishing intelligent
       communication with the Martians. It was with numbers we began. Earth is the third planet from the sun and Mars the
       fourth, so three represented earth and four stood for Mars. Slowly we felt our way to an exchange of ideas, and within
       months were in steady and intelligent communication with them.</p>
 
-    <p>"They asked us first concerning earth, its climates and seas and continents, and concerning ourselves, our races and
+    <p>'They asked us first concerning earth, its climates and seas and continents, and concerning ourselves, our races and
       mechanisms and weapons. Much information we flashed out to them, the language of our communication being English, the
       elements, of which they had learned, with a mixture of numbers and symbolical dot-dash signals.</p>
 
-    <p>"We were as eager to learn about them. They were somewhat reticent, we found, concerning their planet and themselves.
+    <p>'We were as eager to learn about them. They were somewhat reticent, we found, concerning their planet and themselves.
       They admitted that their world was a dying one and that their great canals were to make life possible on it, and also
       admitted that they were different in bodily form from ourselves.</p>
 
-    <p>"They told us finally that communi cation like this was too ineffective to give us a clear picture of their world, or
+    <p>'They told us finally that communi cation like this was too ineffective to give us a clear picture of their world, or
       vice versa. If we could visit Mars, and then they visit earth, both worlds would benefit by the knowledge of the other.
       It seemed impossible to me, though I was eager enough for it. But the Martians said that while spaceships and the like
       were impossible, there was a way by which living beings could flash from earth to Mars and back by radio waves, even
-      as our signals flashed!"</p>
+      as our signals flashed!'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
-    <p>Randall broke in in amazement. "By radio!" he exclaimed, and Milton nodded.</p>
+    <p>Randall broke in in amazement. 'By radio!' he exclaimed, and Milton nodded.</p>
 
-    <p>"Yes, so they said, nor did the idea of sending matter by radio seem too insane, after all. We send sound, music by radio
+    <p>'Yes, so they said, nor did the idea of sending matter by radio seem too insane, after all. We send sound, music by radio
       waves across half the world from our broadcasting stations. We send light, pictures, across the world from our television
       stations. We do that by changing the wave length of the light-vibrations to make them radio vibrations, flashing them
       out thus over the world, to receivers which alter their wave-lengths again and change them back into light-vibrations.</p>
 
-    <p>"Why then could not matter be sent in the same way? Matter, it has been long believed, is but another vibration of the
+    <p>'Why then could not matter be sent in the same way? Matter, it has been long believed, is but another vibration of the
       ether, like light and radiant heat and radio vibrations and the like, having a lower wave-length than any of the others.
       Suppose we take matter and by applying electrical force to it change its wave-length, step it up to the wave-length
       of radio vibrations? Then those vibrations can be flashed forth from the sending station to a special receiver that
       will step them down again from radio vibrations to matter vibrations. Thus matter, living or non-living, could be flashed
       tremendous distances in a second!</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -220,41 +230,41 @@
       radio vibrations by the transmitter, and in moments would have flashed across the gulf to the red planet and would
       be transformed back from radio vibrations to matter-vibrations by the receiver awaiting us there!</p>
 
-    <p>"Naturally we agreed enthusiastically to build such a matter-transmitter and receiver, and then, with their instructions
+    <p>'Naturally we agreed enthusiastically to build such a matter-transmitter and receiver, and then, with their instructions
       signalled to us constantly, started the work. Weeks it took, but at last, only yesterday, we finished it. The thing's
       two cubical chambers are one for the transmitting of matter and the other for its reception. At a time agreed on yesterday
       we tested the thing, placing a guinea pig in the transmitting chamber and turning on the actuating force. Instantly
       the animal vanished, and in moments came a signal from the Martians saying that they had received it unharmed in their
       receiving chamber.</p>
 
-    <p>"Then we tested it the other way, they sending the same guinea pig to us, and in moments it flashed into being in our
+    <p>'Then we tested it the other way, they sending the same guinea pig to us, and in moments it flashed into being in our
       receiving chamber. Of course the step-down force in the receiving chamber had to be in operation, since had it not
       been at that moment the radio-vibrations of the animal would have simply flashed on endlessly in endless space. And
       the same would happen to any of us were we flashed forth and no receiving chamber turned on to receive us.</p>
 
-    <p>"We signalled the Martians that all tests were satisfactory, and told them that on the next night at exactly midnight
+    <p>'We signalled the Martians that all tests were satisfactory, and told them that on the next night at exactly midnight
       by our time we would flash out ourselves on our first visit to them. They have promised to have their receiving chamber
       operating to receive us at that moment, of course, and it is my plan to stay there twenty-four hours, gathering ample
       proofs of our visit, and then flash back to earth.</p>
 
-    <p>"Nelson must stay here, not only to flash us forth to-night, but above all to have the receiving chamber operating to
+    <p>'Nelson must stay here, not only to flash us forth to-night, but above all to have the receiving chamber operating to
       receive us at the destined moment twenty-four hours later. The force required to operate it is too great to use for
       more than a few minutes at a time, so it is necessary above all that that force be turned on and the receiving chamber
       ready for us at the moment we flash back. And since Nelson must stay, and Lanier and I wanted another, we wired you,
-      Randall, in the hope that you would want to go with us on this venture. And do you?"</p>
+      Randall, in the hope that you would want to go with us on this venture. And do you?'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
     <p>As Milton's question hung, Randall drew a long breath. His eyes were on the two great cubical chambers, and his brain
       seemed whirling at what he had heard. Then he was on his feet with the others.</p>
 
-    <p>"Go? Could you keep me from going? Why, man, it's the greatest adventure in history!"</p>
+    <p>'Go? Could you keep me from going? Why, man, it's the greatest adventure in history!'</p>
 
-    <p>Milton grasped his hand, as did Lanier, and then the physicist shot a glance at the square clock on the wall. "Well,
-      there's little enough time left us," he said, "for we've hardly an hour before midnight, and at midnight we must be
-      in that transmitting chamber for Nelson to send us flashing out!"</p>
+    <p>Milton grasped his hand, as did Lanier, and then the physicist shot a glance at the square clock on the wall. 'Well,
+      there's little enough time left us,' he said, 'for we've hardly an hour before midnight, and at midnight we must be
+      in that transmitting chamber for Nelson to send us flashing out!'</p>
 
     <p>Randall could never recall but dimly afterward how that tense hour passed. It was an hour in which Milton and Nelson
       went with anxious faces and low-voiced comments from one to another of the pieces of apparatus in the room, inspecting
@@ -267,7 +277,7 @@
       warned to expect on the red planet. Each had also a strong wrist-watch, the three synchronized exactly with the big
       laboratory clock.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -277,12 +287,12 @@
       dimly lit by the great canopy of the summer stars overhead. Right at the zenith among those stars shone brightest a
       crimson spark.</p>
 
-    <p>"Mars," said Lanier, his voice a half-whisper. "And they're waiting out there for us now&mdash;out there where we'll
-      be in minutes!"</p>
+    <p>'Mars,' said Lanier, his voice a half-whisper. 'And they're waiting out there for us now&mdash;out there where we'll
+      be in minutes!'</p>
 
-    <p>"And if they shouldn't be waiting&mdash;their receiving chamber not ready&mdash;"</p>
+    <p>'And if they shouldn't be waiting&mdash;their receiving chamber not ready&mdash;'</p>
 
-    <p>But Milton's calm voice came across the room to them: "Zero hour," he said, stepping up into the big transmitting chamber.</p>
+    <p>But Milton's calm voice came across the room to them: 'Zero hour,' he said, stepping up into the big transmitting chamber.</p>
 
     <p>Lanier and Randall slowly followed, and despite himself a slight shudder shook the latter's body as he stepped into the
       mechanism that in moments would send him flashing out through the great void as impalpable ether-vibrations. Milton
@@ -297,7 +307,7 @@
       Nelson flung down the switch in his grasp. Blinding light seemed to break from all the chamber onto the three; Randall
       felt himself hurled into nothingness by forces titanic, inconceivable, and then knew no more.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -316,7 +326,7 @@
       of unfamiliar-looking apparatus.
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -338,16 +348,16 @@
       big switch-panel not a half-dozen feet from the three men. Milton and Lanier and Randall returned in a tense silence
       the unwinking stare of the monstrous beings around them.</p>
 
-    <p>"The Martians!" Lanier's horror-filled exclamation was echoed in the next instant by Randall's.</p>
+    <p>'The Martians!' Lanier's horror-filled exclamation was echoed in the next instant by Randall's.</p>
 
-    <p>"The Martians! God, Milton! They're not like anything we know&mdash;they're reptilian!"</p>
+    <p>'The Martians! God, Milton! They're not like anything we know&mdash;they're reptilian!'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
-    <p>Milton's hand clutched his shoulder. "Steady, Randall," he muttered. "They're terrible enough, God knows&mdash;but remember
-      we must seem just as grotesque to them."</p>
+    <p>Milton's hand clutched his shoulder. 'Steady, Randall,' he muttered. 'They're terrible enough, God knows&mdash;but remember
+      we must seem just as grotesque to them.'</p>
 
     <p>The sound of their voices seemed to break the great hall's spell of silence, and they saw the crocodilian Martians before
       them turning and speaking swiftly to each other in low hissing speech-sounds that were quite unintelligible to the
@@ -360,28 +370,28 @@
       of sounds that for the moment puzzled them, so different were they from the hissing speech of the others, though with
       the same sibilance of tone. Again the thing repeated the sounds, and this time Milton uttered an exclamation.</p>
 
-    <p>"He's speaking to us!" he cried. "Trying to speak the English that I taught them in our communication! I caught a word&mdash;listen...."</p>
+    <p>'He's speaking to us!' he cried. 'Trying to speak the English that I taught them in our communication! I caught a word&mdash;listen....'</p>
 
     <p>As the creature repeated the sounds, Randall and Lanier started to hear also vaguely expressed in that hissing voice
-      familiar words: "You&mdash;are Milton and&mdash;others from&mdash;earth?"</p>
+      familiar words: 'You&mdash;are Milton and&mdash;others from&mdash;earth?'</p>
 
-    <p>Milton spoke very clearly and slowly to the creature: "We are those from earth," he said. "And you are the Martians with
-      whom we have communicated?"</p>
+    <p>Milton spoke very clearly and slowly to the creature: 'We are those from earth,' he said. 'And you are the Martians with
+      whom we have communicated?'</p>
 
-    <p>"We are those Martians," said the other's hissing voice slowly. "These"&mdash;he waved a taloned paw toward those behind
-      him&mdash;"have charge of the matter-transmitter and receiver. I am of our ruler's council."</p>
+    <p>'We are those Martians,' said the other's hissing voice slowly. 'These'&mdash;he waved a taloned paw toward those behind
+      him&mdash;'have charge of the matter-transmitter and receiver. I am of our ruler's council.'</p>
 
-    <p>"Ruler?" Milton repeated. "A ruler of all Mars?"</p>
+    <p>'Ruler?' Milton repeated. 'A ruler of all Mars?'</p>
 
-    <p>"Of all Mars," the other said. "Our name for him would mean in your words the Martian Master. I am to take you to him."</p>
+    <p>'Of all Mars,' the other said. 'Our name for him would mean in your words the Martian Master. I am to take you to him.'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
-    <p>Milton turned to the other two with face alight with excitement. "These Martians have some supreme ruler they call the
-      Martian Master," he said quickly; "and we're to go before him. As the first visitors from earth we're of immense importance
-      here."
+    <p>Milton turned to the other two with face alight with excitement. 'These Martians have some supreme ruler they call the
+      Martian Master,' he said quickly; 'and we're to go before him. As the first visitors from earth we're of immense importance
+      here.'
     </p>
 
     <p>As he spoke, the Martian official before them had uttered a hissing call, and in answer to it a long shape of shining
@@ -402,7 +412,7 @@
       from which they had just come, though none seemed as large as that titanic one. Throngs of the hideous crocodilian
       Martians were moving busily to and fro in the streets, while among them there scuttled and flashed numbers of the centipede-machines.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -413,22 +423,22 @@
       waterway.
     </p>
 
-    <p>The Martian beside them saw the direction of his gaze and leaned toward him. "No Martians live there," he hissed slowly.
-      "Martians live only in cities where canals meet."</p>
+    <p>The Martian beside them saw the direction of his gaze and leaned toward him. 'No Martians live there,' he hissed slowly.
+      'Martians live only in cities where canals meet.'</p>
 
-    <p>"Then there's no life in those crimson jungles?" Randall asked, repeating the question a moment later more slowly.</p>
+    <p>'Then there's no life in those crimson jungles?' Randall asked, repeating the question a moment later more slowly.</p>
 
-    <p>"No Martians there, but life&mdash;living things," the other told him, searching for words. "But not intelligent, like
-      Martians and you."</p>
+    <p>'No Martians there, but life&mdash;living things,' the other told him, searching for words. 'But not intelligent, like
+      Martians and you.'</p>
 
-    <p>He turned to gaze ahead, then pointed. "The Martian Master's cone," he hissed.</p>
+    <p>He turned to gaze ahead, then pointed. 'The Martian Master's cone,' he hissed.</p>
 
     <p>The three saw that at the end of the broad metal street down which their vehicle was racing there loomed another titanic
       cone-structure, fully as large as the mighty one in which they first found themselves. As the centipede-machine swept
       up to its great door-opening and halted, they descended to the metal paving and then followed their reptilian guide
       through the opening.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -438,7 +448,7 @@
       end also were guards. As these sprang aside before them, a great door of massive metal they guarded moved softly upward,
       disclosing a mighty circular hall or room inside. Their crocodilian guide turned to them.</p>
 
-    <p>"The hall of the Martian Master," he hissed.</p>
+    <p>'The hall of the Martian Master,' he hissed.</p>
 
     <p>They passed inside with him. The great hall seemed to extend upward to the giant cone's tip, thin light coming down from
       an opening there. Upon the dull metal of its looming walls were running friezes of lighter metal, grotesque representations
@@ -456,7 +466,7 @@
       on the three thick short necks that rose from the triple body! And that head, that triple-bodied thing, was living,
       its unwinking eyes gazing at the three men!</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -470,40 +480,40 @@
 
     <p>A hissing voice sounding before him made him aware that the Martian Master was speaking.</p>
 
-    <p>"You are the Earth-beings with whom we communicated, and whom we instructed to build a matter-transmitter and receiver
-      on earth?" the slow voice asked. "You have come safely to Mars by means of that station?"</p>
+    <p>'You are the Earth-beings with whom we communicated, and whom we instructed to build a matter-transmitter and receiver
+      on earth?' the slow voice asked. 'You have come safely to Mars by means of that station?'</p>
 
-    <p>"We have come safely." Milton's voice was shaken and he could find no other words.</p>
+    <p>'We have come safely.' Milton's voice was shaken and he could find no other words.</p>
 
-    <p>"That is well. Long had we desired to have such a station built on earth, since with it there to flash back and forth
+    <p>'That is well. Long had we desired to have such a station built on earth, since with it there to flash back and forth
       between the two worlds is easy. You have come, then, to learn of this world and to take back what you learn to your
-      races?"
+      races?'
     </p>
 
-    <p>"That is why we came." Milton said, more steadily. "We want to stay only hours on this first visit, and then flash back
-      to earth as we came."</p>
+    <p>'That is why we came.' Milton said, more steadily. 'We want to stay only hours on this first visit, and then flash back
+      to earth as we came.'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
-    <p>The head's awful eyes seemed to consider them. "But when do you intend to go back?" its strange voice asked. "Unless
+    <p>The head's awful eyes seemed to consider them. 'But when do you intend to go back?' its strange voice asked. 'Unless
       the one at your earth station has its receiver operating at the right moment you will simply flash on endlessly as
-      radio waves&mdash;will be annihilated."</p>
+      radio waves&mdash;will be annihilated.'</p>
 
-    <p>Milton found the courage to smile. "We started from earth at our midnight exactly, and at midnight exactly twenty-four
-      earth hours later, we are to flash back and the receiver will be awaiting us."</p>
+    <p>Milton found the courage to smile. 'We started from earth at our midnight exactly, and at midnight exactly twenty-four
+      earth hours later, we are to flash back and the receiver will be awaiting us.'</p>
 
     <p>There was silence when he had said that, a silence that seemed to Randall's strained mind to have become suddenly tense,
       sinister. The great triple-bodied creature before them considered them again, its eyes moving over them, and when it
       again spoke the hissing words came very slowly.</p>
 
-    <p>"Twenty-four earth hours," it said; "and then your receiver on earth will be awaiting you. That time we can measure to
+    <p>'Twenty-four earth hours,' it said; 'and then your receiver on earth will be awaiting you. That time we can measure to
       the moment, and that is well. For it is not you three Earth-beings who will flash back to earth when that moment comes!
       It will be Martians, the first of our Martian masses who have waited for ages for that moment and who will begin then
       our conquest of the earth!</p>
 
-    <p>"Yes, Earth-beings, our great plan comes to its end now at last! At last! Age on age, prisoned on this dying, arid world,
+    <p>'Yes, Earth-beings, our great plan comes to its end now at last! At last! Age on age, prisoned on this dying, arid world,
       we have desired the earth that by right of power shall be ours, have sought for ages to communicate with its beings.
       You finally heard us, you hearkened to us, you built the matter-transmitting and receiving station on earth that was
       the one thing needed for our plan. For when the matter-receiver of that station is turned on in twenty-four of your
@@ -511,16 +521,16 @@
       earth!
     </p>
 
-    <p>"I, the Martian Master, say it. Those first to go shall seize that matter-receiver on earth when first they appear there,
+    <p>'I, the Martian Master, say it. Those first to go shall seize that matter-receiver on earth when first they appear there,
       shall build other and larger receivers, and through them within days all our Martian hordes shall have been flashed
       to earth! Shall have poured out over it and conquered with our weapons your weak races of Earth-beings, who cannot
-      stand before us, and whose world you have delivered at last into our hands!"</p>
+      stand before us, and whose world you have delivered at last into our hands!'</p>
 
     <p>For a moment, when the great monster's hissing voice had ceased, Milton and Randall and Lanier gazed toward it as though
       petrified, the whole unearthly scene spinning about them. And then, through the thick silence, the thin sound of Milton's
       voice: </p>
 
-    <p>"Our world&mdash;our earth&mdash;delivered to the Martians, and by us! God&mdash;no!"</p>
+    <p>'Our world&mdash;our earth&mdash;delivered to the Martians, and by us! God&mdash;no!'</p>
 
     <p>With that last cry of agonized comprehension and horror, Milton did what surely had never any in the great hall expected,
       leaped onto the dais with a single spring toward the Martian Master! Randall heard a hundred wild hissing cries break
@@ -528,7 +538,7 @@
       Milton, and then glimpsed shining tubes levelled from which brilliant shafts of dazzling crimson light or force were
       stabbing toward them!</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -550,7 +560,7 @@
       own weapons a new wave of crocodilian forms had poured onto them that by sheer pressing weight held them helpless,
       to be disarmed.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -559,15 +569,15 @@
       again the triple-bodied Martian Master, who in all that wild moment of struggle appeared not to have changed his position.
       The big monster's black eyes stared unmovedly down at them.</p>
 
-    <p>"You Earth-beings seem of lower intelligence even than we thought," his hissing voice informed them. "And those weapons&mdash;crude,
-      very crude."</p>
+    <p>'You Earth-beings seem of lower intelligence even than we thought,' his hissing voice informed them. 'And those weapons&mdash;crude,
+      very crude.'</p>
 
-    <p>Milton, his face set, spoke back: "It may be that you will find human weapons of some power if your hordes reach earth,"
+    <p>Milton, his face set, spoke back: 'It may be that you will find human weapons of some power if your hordes reach earth,'
       he said.</p>
 
-    <p>"But what compared with the power of ours?" the other asked coldly. "And since our scientists even now devise new weapons
+    <p>'But what compared with the power of ours?' the other asked coldly. 'And since our scientists even now devise new weapons
       to annihilate the earth's races, I think they would be glad of three of those races to experiment with now. The one
-      use we can make of you, certainly."</p>
+      use we can make of you, certainly.'</p>
 
     <p>The creature turned its bulging head a little towards the guards who held the three men, and uttered a brief hissing
       order. Instantly the six Martians, grasping the three tightly, marched them across the great hall and through a different
@@ -577,7 +587,7 @@
       inset in the walls that glowed with crimson light. It came to him as they marched on that night must be upon the Martian
       city without, since the sun had been sinking when they had crossed it in the centipede-machine.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -592,31 +602,31 @@
       their levelled ray-tubes, the other moved toward one of the busy Martian scientists and held with him a brief interchange
       of hissing speech.</p>
 
-    <p>Milton leaned to whisper to the other two: "We've got to get out of this while we're still living," he whispered. "You
+    <p>Milton leaned to whisper to the other two: 'We've got to get out of this while we're still living,' he whispered. 'You
       heard the Martian Master&mdash;in constructing that matter-receiver on earth, we've opened a door through which all
-      the Martian millions will pour onto our world!"</p>
+      the Martian millions will pour onto our world!'</p>
 
-    <p>"It's useless, Milton," said Randall dully. "Even if we got clear of this the Martians will be at their matter-transmitter
-      in hordes when the moment comes to flash back to earth."</p>
+    <p>'It's useless, Milton,' said Randall dully. 'Even if we got clear of this the Martians will be at their matter-transmitter
+      in hordes when the moment comes to flash back to earth.'</p>
 
-    <p>"I know that, but we've got to try," the other insisted. "If we or some of us could get clear of this, we might in some
-      way hide near the matter-transmitter until the moment came and then fight to it."</p>
+    <p>'I know that, but we've got to try,' the other insisted. 'If we or some of us could get clear of this, we might in some
+      way hide near the matter-transmitter until the moment came and then fight to it.'</p>
 
-    <p>"But how to get out of the hands of these, even?" asked Lanier, nodding toward the alert guards before them.</p>
+    <p>'But how to get out of the hands of these, even?' asked Lanier, nodding toward the alert guards before them.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
-    <p>There's but one way," Milton whispered swiftly. "Our earthly muscles would enable us, I think, to get through this window-opening
+    <p>There's but one way,' Milton whispered swiftly. 'Our earthly muscles would enable us, I think, to get through this window-opening
       above us in a leap, if we had a moment's chance. Well, whichever of us they take to experiment with or examine first,
       must make a struggle or disturbance that will turn the guards' attention for a moment and give the other two a chance
-      to make the attempt!"</p>
+      to make the attempt!'</p>
 
-    <p>"One to stay and the other two to get away...." Randall said slowly; but Milton's tense whisper interrupted:</p>
+    <p>'One to stay and the other two to get away....' Randall said slowly; but Milton's tense whisper interrupted:</p>
 
-    <p>"It's the only way, and even then a thousand to one chance! But it's we who have opened this gate for the Martian invasion
-      of our world and it's we who must&mdash;"</p>
+    <p>'It's the only way, and even then a thousand to one chance! But it's we who have opened this gate for the Martian invasion
+      of our world and it's we who must&mdash;'</p>
 
     <p>Before he could finish, the approach of hissing voices told them that the leader of the six guards and the Martian who
       seemed the chief of the experimenters in the hall were nearing them. The three men stood silent and tense as the two
@@ -627,7 +637,7 @@
       the three knew that one of them was to be chosen for a first investigation by the Martian scientists, and that that
       one would have not even the slender hope of escape open to the other two. A strange lottery of life and death!</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -647,7 +657,7 @@
       explosion of activity and sound on Milton's part the guards before Randall and Lanier whirled instinctively for an
       instant toward it. And in that instant the two had leaped.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -670,13 +680,13 @@
     <p>Along the street crocodilian Martians were coming and going still, though in small numbers, there being but few in sight
       in the dim-lit street's length. Lanier pointed ahead as they leaped onward.</p>
 
-    <p>"Straight onward, Randall!" he jerked. "There seem fewer of the Martians this way!"</p>
+    <p>'Straight onward, Randall!' he jerked. 'There seem fewer of the Martians this way!'</p>
 
-    <p>"But the great cone of the matter-station is the other way!" Randall exclaimed.
+    <p>'But the great cone of the matter-station is the other way!' Randall exclaimed.
     </p>
 
-    <p>"We can't risk making for it now!" cried the other. "We've got to keep clear of them until the alarm is over. Hear them
-      now?"
+    <p>'We can't risk making for it now!' cried the other. 'We've got to keep clear of them until the alarm is over. Hear them
+      now?'
     </p>
 
     <p>For even as they leaped forward a rising clamor of hissing cries and rush of feet was coming from behind as scores of
@@ -686,7 +696,7 @@
       around them.
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -717,7 +727,7 @@
       sprawling to this side and that, while with a supreme effort the two kept their balance and leaped on. The cries of
       the three added to the din behind them as they threw themselves forward.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -725,11 +735,11 @@
       Before them were no more streets and structures, but a huge smooth-flowing waterway! It gleamed in the moonlight and
       lay at right angles across their path, seeming to flow along the Martian city's edge.</p>
 
-    <p>"A canal!" cried Lanier. "It's one of the canals that meet at this city and flow around it! We're trapped&mdash;we've
-      reached the city's edge!"
+    <p>'A canal!' cried Lanier. 'It's one of the canals that meet at this city and flow around it! We're trapped&mdash;we've
+      reached the city's edge!'
     </p>
 
-    <p>"Not yet!" Randall gasped. "Look!"</p>
+    <p>'Not yet!' Randall gasped. 'Look!'</p>
 
     <p>As he pointed to the left Lanier shot a glance there; and then both of them were running in that direction, along the
       smooth metal paving that bordered the mighty canal. They came to what Randall had seen, a mighty metal arch that soared
@@ -746,7 +756,7 @@
       them.
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -754,7 +764,7 @@
       and then over soft ground. There were no lights or buildings or sounds of any sort on this farther side of the great
       waterway. A tall dark wall seemed suddenly to loom up out of the darkness some distance ahead of the two.</p>
 
-    <p>"The crimson jungle!" Randall cried. "The jungles we glimpsed from the city! It's a chance to hide!"</p>
+    <p>'The crimson jungle!' Randall cried. 'The jungles we glimpsed from the city! It's a chance to hide!'</p>
 
     <p>They raced toward the protecting blackness of that wall of vegetation. They reached it, flung themselves inside, just
       as the pursuing Martians, a mass of running crocodilian shapes and of great racing centipede-machines, swept up over
@@ -767,7 +777,7 @@
       it was only beside the arid planet's great canals that this profusion of plant life had sufficient moisture for existence,
       and that it was the broad bands of jungle bordering the canals that had made the latter visible to earth's astronomers.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -776,7 +786,7 @@
       of great masses of the leafless trees.
     </p>
 
-    <p>"The rays!" whispered Lanier. "They're beating through the jungle with them and the centipede-machines after us!"</p>
+    <p>'The rays!' whispered Lanier. 'They're beating through the jungle with them and the centipede-machines after us!'</p>
 
     <p>They paused no more, but pushed on through the thick growths with renewed urgency. Now and then, as they passed through
       small clearings, Randall glimpsed overhead the fast-moving nearer moon and slower sailing farther moon of Mars, moving
@@ -786,17 +796,17 @@
     <p>The crashing clamor of the Martians beating the jungle behind was coming close, ever closer, and as they came to still
       another misty-lit clearing, Lanier paused, with face white and tense.</p>
 
-    <p>"They're closing in on us!" he said. "They're hunting us down by beating the jungle with those centipede-machines, and
-      even if we escape them we're getting farther from the city and the matter-station each moment!"</p>
+    <p>'They're closing in on us!' he said. 'They're hunting us down by beating the jungle with those centipede-machines, and
+      even if we escape them we're getting farther from the city and the matter-station each moment!'</p>
 
     <p>Randall's eyes roved desperately around the clearing; and then, as they fell on a group of the great burrowed openings
       that seemed present everywhere about them, he uttered an exclamation.</p>
 
-    <p>"These holes! We can hide in one until they've passed over us, and then steal back to the city!"</p>
+    <p>'These holes! We can hide in one until they've passed over us, and then steal back to the city!'</p>
 
-    <p>Lanier's eyes lit. "It's a chance!"</p>
+    <p>Lanier's eyes lit. 'It's a chance!'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -815,7 +825,7 @@
       beneath, cold ropelike tentacles gripped both tightly; and then in an instant they were being dragged irresistibly
       down into the lightless tunnel's depths!</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -840,7 +850,7 @@
       not.
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -848,8 +858,8 @@
       lower. The horror of that moment's glimpse, though, made them strike out in blind repulsion, but relentlessly the creature
       dragged them after it.</p>
 
-    <p>"God!" It was Lanier's panting cry as they were dragged on. "This worm monster&mdash;we're hundreds of feet below the
-      surface!"
+    <p>'God!' It was Lanier's panting cry as they were dragged on. 'This worm monster&mdash;we're hundreds of feet below the
+      surface!'
     </p>
 
     <p>Randall sought to reply, but his voice choked. The air about them was close and damp, with an overpowering earthy smell.
@@ -865,7 +875,7 @@
       in hordes around and over each other, pouring in and out of the awful place from countless tunnels that led upward
       and downward from it!</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -875,12 +885,12 @@
       in the jungles were living things, of a sort. These were the things, worm monsters whose unthinkable networks of tunnels
       and burrows formed beneath the surface a veritable worm world!</p>
 
-    <p>"Randall!" It was Lanier's thick exclamation. "Randall&mdash;those scar-marks on their&mdash;faces&mdash;you see&mdash;?"</p>
+    <p>'Randall!' It was Lanier's thick exclamation. 'Randall&mdash;those scar-marks on their&mdash;faces&mdash;you see&mdash;?'</p>
 
-    <p>"See?"</p>
+    <p>'See?'</p>
 
-    <p>"Those marks! These creatures had eyes once but must have been forced down here by the Martians. These may once have
-      been&mdash;ages ago&mdash;human!"
+    <p>'Those marks! These creatures had eyes once but must have been forced down here by the Martians. These may once have
+      been&mdash;ages ago&mdash;human!'
     </p>
 
     <p>At that thought Randall felt horror overcoming his senses. He was aware that the great worm monster holding them was
@@ -894,7 +904,7 @@
       by these numberless things.
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -921,17 +931,17 @@
       end was reared upward to the cavity's roof. Before this awful earthen shape was a section of the cave's floor higher
       than the rest, and on it a great crudely shaped rectangular earthen block.</p>
 
-    <p>"Lanier&mdash;that shape!" whispered Randall in his horror. "That earthen image, made by these creatures&mdash;it's the
-      worm god they've made for themselves!"
+    <p>'Lanier&mdash;that shape!' whispered Randall in his horror. 'That earthen image, made by these creatures&mdash;it's the
+      worm god they've made for themselves!'
     </p>
 
-    <p>"A worm god!" Lanier repeated, staring toward it as they were dragged nearer. "Then that block...."</p>
+    <p>'A worm god!' Lanier repeated, staring toward it as they were dragged nearer. 'Then that block....'</p>
 
-    <p>"Its altar!" Randall exclaimed. "These things have some dim spark of intelligence or memory! They're brought us here
-      to&mdash;"
+    <p>'Its altar!' Randall exclaimed. 'These things have some dim spark of intelligence or memory! They're brought us here
+      to&mdash;'
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -956,7 +966,7 @@
       likewise, the cavity becoming a forest of upraised tentacles waving rhythmically back and forth in unison with those
       of the leader.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -980,7 +990,7 @@
       to follow. Then abruptly the worm leader ceased the motion himself, and while the horde before him continued it, turned
       and crawled to the three captives.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -997,7 +1007,7 @@
 
     <p>The tentacles of the horde waved suddenly with increased, excited swiftness at that. Randall shrank in horror.</p>
 
-    <p>"They've brought us here for that!" he cried. "To sacrifice us on that altar that way to their worm god!"</p>
+    <p>'They've brought us here for that!' he cried. 'To sacrifice us on that altar that way to their worm god!'</p>
 
     <p>But Lanier too had cried out, appalled, as he saw that awful sacrifice, and both strained madly against the grip of the
       worm creatures. Their struggles were in vain, and then in answer to another unspoken command the two monsters that
@@ -1008,7 +1018,7 @@
       Lanier's mad cries as though from a great distance, glimpsed as he was held thus on his back the great shape of the
       earthen worm god reared over him, and then glimpsed the leader of the monsters rearing beside him.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1030,14 +1040,14 @@
       before them! And as the centipede-machines burst down into the cavern their crimson rays stabbed right and left to
       cut paths of annihilation among the worms.</p>
 
-    <p>"The Martians!" Lanier cried. "They didn't find us above&mdash;they knew we must have been taken by these things&mdash;and
-      they've come down after us!"</p>
+    <p>'The Martians!' Lanier cried. 'They didn't find us above&mdash;they knew we must have been taken by these things&mdash;and
+      they've come down after us!'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
-    <p>Back, Lanier!" Randall shouted. "Quick, before they see us, behind this&mdash;"
+    <p>Back, Lanier!' Randall shouted. 'Quick, before they see us, behind this&mdash;'
     </p>
 
     <p>As he spoke he was jerking Lanier with him behind the looming earthen statue of the great worm god. Crouched there between
@@ -1056,14 +1066,14 @@
       in which his vehicle was jammed, then with a hand ray-tube began to disintegrate the earth around that opening to free
       his machine.</p>
 
-    <p>Randall clutched his companion's arm. "That machine!" he whispered. "If we could capture it, it would give us a chance
-      to get back to the city&mdash;to Milton and the matter-transmitter!"</p>
+    <p>Randall clutched his companion's arm. 'That machine!' he whispered. 'If we could capture it, it would give us a chance
+      to get back to the city&mdash;to Milton and the matter-transmitter!'</p>
 
-    <p>Lanier started, then nodded swiftly. "We'll chance it," he whispered. "For our twenty-four hours here must be almost
-      up."
+    <p>Lanier started, then nodded swiftly. 'We'll chance it,' he whispered. 'For our twenty-four hours here must be almost
+      up.'
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1086,11 +1096,11 @@
       and then another, and another. The Martians in their transparent-windowed control rooms took in at a glance the dead
       crocodilian on the floor, and then the three great machines were darting toward that of Randall and Lanier.</p>
 
-    <p>"The Martian we killed!" Randall cried. "They heard his call and are coming after us!"</p>
+    <p>'The Martian we killed!' Randall cried. 'They heard his call and are coming after us!'</p>
 
-    <p>"Turn to the wall!" Lanier shouted to him. "I have the rays&mdash;"</p>
+    <p>'Turn to the wall!' Lanier shouted to him. 'I have the rays&mdash;'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1108,25 +1118,25 @@
       kept the machine racing forward in the succeeding second until the two others loomed on either side of it. Then Lanier's
       beams were driving in turn to right and left of them and the two vanished as though by magic as they were struck.</p>
 
-    <p>"Up to the surface!" Lanier cried, his eyes on the glowing dial of his wrist-watch. "We've been held hours here&mdash;we've
-      but a half-hour or more before earth midnight!"</p>
+    <p>'Up to the surface!' Lanier cried, his eyes on the glowing dial of his wrist-watch. 'We've been held hours here&mdash;we've
+      but a half-hour or more before earth midnight!'</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
     <p>Randall sent their machine racing again toward one of the upward tunnels, and as the long mechanism began to climb smoothly
       up the darkness he heard Lanier agonizing beside him.</p>
 
-    <p>"God, if we have only enough time to get to that matter-transmitter before the Martians start flashing to earth through
-      it!"
+    <p>'God, if we have only enough time to get to that matter-transmitter before the Martians start flashing to earth through
+      it!'
     </p>
 
-    <p>"But Milton?" Randall cried. "We don't know whether he's alive or dead! We can't leave him!"</p>
+    <p>'But Milton?' Randall cried. 'We don't know whether he's alive or dead! We can't leave him!'</p>
 
-    <p>"We must!" said Lanier solemnly. "Our duty's to the earth now, man, to the world that we alone can save from the Martian
+    <p>'We must!' said Lanier solemnly. 'Our duty's to the earth now, man, to the world that we alone can save from the Martian
       invasion and conquest! At the hour of twelve Nelson will have the matter-receiver turned on and at that hour the Martian
-      will start flashing to earth&mdash;unless we prevent!"</p>
+      will start flashing to earth&mdash;unless we prevent!'</p>
 
     <p>Suddenly Randall grasped the knob in his hands more tightly as light showed above them. They had been climbing upward
       through the enlarged tunnel at their machine's highest speed, and now as the tunnel curved the light grew stronger.
@@ -1145,7 +1155,7 @@
       loomed into the thin sunlight the clustering cones of the mighty Martian city, two towering above all the others&mdash;the
       cone of the Martian Master and the other cone in which was the matter-transmitter and receiver.</p>
 
-    <p>It was toward the latter that Lanier pointed. "Head straight toward that cone, Randall&mdash;we've but minutes left!"</p>
+    <p>It was toward the latter that Lanier pointed. 'Head straight toward that cone, Randall&mdash;we've but minutes left!'</p>
 
     <p>They were racing now up over the great arch of the canal's metal bridge, and then scuttling smoothly off it and along
       the broad metal street through which they had fled in darkness hours before. In it Martians and centipede-machines
@@ -1158,7 +1168,7 @@
       lived in the laboratories from which they had fled. But they were past it, faces white and grim, were rushing on through
       the Martian city at reckless speed toward the other mighty cone.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1167,9 +1177,9 @@
       hearts pounding, they saw that around it surged a mighty mass of Martians and machines. The hordes waiting to be released
       through the matter-transmitter inside upon the unsuspecting earth!</p>
 
-    <p>"Try to get the machine inside!" Lanier whispered tensely. "If we can smash that transmitter yet...."</p>
+    <p>'Try to get the machine inside!' Lanier whispered tensely. 'If we can smash that transmitter yet....'</p>
 
-    <p>Randall nodded grimly. "Keep ready at the ray-tubes," he told the other.
+    <p>Randall nodded grimly. 'Keep ready at the ray-tubes,' he told the other.
     </p>
 
     <p>As unobtrusively as possible he sent their long mechanism worming forward through the vast throng of machines and Martians,
@@ -1188,7 +1198,7 @@
       out.
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1198,10 +1208,10 @@
       all else.
     </p>
 
-    <p>"Milton! My God, Lanier, it's Milton!"</p>
+    <p>'Milton! My God, Lanier, it's Milton!'</p>
 
-    <p>"Milton! They've brought him here to torture or kill him if they find he's lied about the moment they could flash to
-      earth!"
+    <p>'Milton! They've brought him here to torture or kill him if they find he's lied about the moment they could flash to
+      earth!'
     </p>
 
     <p>Milton! And at sight of him something snapped in Randall's brain.</p>
@@ -1216,7 +1226,7 @@
       Martians and machines surged madly toward them. Randall and Lanier in a single leap were out of the centipede-machine,
       and in an instant had half-dragged Milton with them in a great leap up to the edge of the humming transmitting chamber.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1238,7 +1248,7 @@
       voice reached him in a supreme cry.</p>
 
     <p>
-      <i>"Randall&mdash;the transmitter!"</i>
+      <i>'Randall&mdash;the transmitter!'</i>
     </p>
 
     <p>For in that instant Milton was leaping back with Lanier, and as Randall with his last strength threw himself backward
@@ -1252,7 +1262,7 @@
       him; and then, as in answer to it Nelson drove up the switch and turned off the force of the matter-receiver in which
       they lay, the black curtain descended on Randall's brain once more.</p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1270,7 +1280,7 @@
       stopped to allow their exhausted bodies a moment of rest.
     </p>
 
-    <p class="separator">
+    <p class='separator'>
       <strong>* * * * *</strong>
     </p>
 
@@ -1280,15 +1290,15 @@
       stretching far away before them, the curtain of summer stars stretched across the heavens. And, sinking westward amid
       those stars, the red spark of Mars toward which as though toward a magnet all their eyes had turned.</p>
 
-    <p>Milton was speaking. "Up there it has shone for centuries&mdash;ages&mdash;a crimson spot of light. And up there the
-      Martians have been watching, watching&mdash;until at last we opened to them the gate."</p>
+    <p>Milton was speaking. 'Up there it has shone for centuries&mdash;ages&mdash;a crimson spot of light. And up there the
+      Martians have been watching, watching&mdash;until at last we opened to them the gate.'</p>
 
-    <p>Randall's hand was on his shoulder. "But we closed that gate, too, in the end."</p>
+    <p>Randall's hand was on his shoulder. 'But we closed that gate, too, in the end.'</p>
 
-    <p>Milton nodded slowly. "We&mdash;or the fate that rules our worlds. But the gate is closed, and God grant, shall never
-      again be opened by any on this world."</p>
+    <p>Milton nodded slowly. 'We&mdash;or the fate that rules our worlds. But the gate is closed, and God grant, shall never
+      again be opened by any on this world.'</p>
 
-    <p>"God grant it," the other echoed.</p>
+    <p>'God grant it,' the other echoed.</p>
 
     <p>And they were all gazing still toward the thing. Gazing up toward the crimson spot of light that burned there among the
       stars, toward the planet that shone red, menacing, terrible, but whose menace and whose terror had been thrust back
